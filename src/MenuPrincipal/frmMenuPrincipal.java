@@ -101,7 +101,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 590, -1, -1));
 
         jButton5.setText("Informacion ");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 160, 180));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 160, 160, 180));
 
         jButton6.setText("Reporte ");
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, 160, 180));
