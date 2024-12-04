@@ -37,8 +37,7 @@ public class frmContactManager extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        seguro = new javax.swing.JPasswordField();
+        txtPasword = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         btnEntrar = new javax.swing.JButton();
@@ -81,10 +80,9 @@ public class frmContactManager extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Usuario.png"))); // NOI18N
         jLabel6.setText(" ");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 40, 50));
-        jPanel2.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 510, 30));
 
-        seguro.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
-        jPanel2.add(seguro, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 290, 40));
+        txtPasword.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
+        jPanel2.add(txtPasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 290, 40));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 154, 700, 290));
 
@@ -122,26 +120,24 @@ public class frmContactManager extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
-        String UsuarioO = "Admin";
-        String Contraseña = "123";
+
+        String user,pwd;
+        user = txtUsuario.getText();
+        pwd = txtPasword.getText();
         
-        String Pass = new String(seguro.getPassword());
-        String Usuario = txtUsuario.getText();
-        
-        if (Usuario.equals(UsuarioO) && Pass.equals(Contraseña))
+        if (user .equals("admin") && pwd.equals("123"))
         {
-            frmMenuPrincipal menu = new frmMenuPrincipal();
-            menu.setVisible(true);
-            dispose();
-            //frmMenuPrincipal frame = new frmMenuPrincipal();
-            //frame.setVisible(true);
-        } else 
+            JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
+        }
+        else 
         {
-            JOptionPane.showMessageDialog(this, "Usuario / Contraseña Incorrecta");
+            frmMenuPrincipal acceso = new frmMenuPrincipal();
+            acceso.setVisible(true);
+            this.setVisible(false);
             
         }
-        
+       
+          
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
@@ -199,10 +195,9 @@ public class frmContactManager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JPasswordField seguro;
+    private javax.swing.JPasswordField txtPasword;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
