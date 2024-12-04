@@ -4,6 +4,8 @@
  */
 package MenuPrincipal;
 
+import GUI.frmContactManager;
+
 /**
  *
  * @author darwi
@@ -28,10 +30,10 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnAgregarContacto = new javax.swing.JButton();
+        btnEliminarContacto = new javax.swing.JButton();
+        btnBuscarContacto = new javax.swing.JButton();
+        btnEditarContacto = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -39,9 +41,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnInformacion = new javax.swing.JButton();
+        btnReporte = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,49 +57,49 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jLabel1.setText("MENU PRINCIPAL");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 580, 130));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/Agregar Usu MP.png"))); // NOI18N
-        jButton1.setText(" ");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarContacto.setBackground(new java.awt.Color(0, 0, 51));
+        btnAgregarContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/Agregar Usu MP.png"))); // NOI18N
+        btnAgregarContacto.setText(" ");
+        btnAgregarContacto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAgregarContacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarContactoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 160, 180));
+        jPanel1.add(btnAgregarContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 160, 180));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 51));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/eliminar-amigoMPP.png"))); // NOI18N
-        jButton2.setText(" ");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarContacto.setBackground(new java.awt.Color(0, 0, 51));
+        btnEliminarContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/eliminar-amigoMPP.png"))); // NOI18N
+        btnEliminarContacto.setText(" ");
+        btnEliminarContacto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminarContacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnEliminarContactoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 160, 180));
+        jPanel1.add(btnEliminarContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 160, 180));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 51));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/busquedaMP.png"))); // NOI18N
-        jButton3.setText(" ");
-        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarContacto.setBackground(new java.awt.Color(0, 0, 51));
+        btnBuscarContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/busquedaMP.png"))); // NOI18N
+        btnBuscarContacto.setText(" ");
+        btnBuscarContacto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBuscarContacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnBuscarContactoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 160, 180));
+        jPanel1.add(btnBuscarContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 160, 180));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 51));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/EditarMP.png"))); // NOI18N
-        jButton4.setText(" ");
-        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarContacto.setBackground(new java.awt.Color(0, 0, 51));
+        btnEditarContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/EditarMP.png"))); // NOI18N
+        btnEditarContacto.setText(" ");
+        btnEditarContacto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEditarContacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnEditarContactoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 160, 180));
+        jPanel1.add(btnEditarContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 160, 180));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 160, 180));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
@@ -128,27 +132,48 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jLabel8.setText("Imprimir Reporte  ");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 590, -1, -1));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 51));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/informacionMP.png"))); // NOI18N
-        jButton5.setText(" ");
-        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnInformacion.setBackground(new java.awt.Color(0, 0, 51));
+        btnInformacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/informacionMP.png"))); // NOI18N
+        btnInformacion.setText(" ");
+        btnInformacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnInformacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnInformacionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 160, 180));
+        jPanel1.add(btnInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 160, 180));
 
-        jButton6.setBackground(new java.awt.Color(0, 0, 51));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/ReporteMP.png"))); // NOI18N
-        jButton6.setText(" ");
-        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 400, 160, 180));
+        btnReporte.setBackground(new java.awt.Color(0, 0, 51));
+        btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/ReporteMP.png"))); // NOI18N
+        btnReporte.setText(" ");
+        btnReporte.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReporteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 400, 160, 180));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setText(" ");
         jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 860, 510));
+
+        jLabel10.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Salir del sistema");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 680, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 51));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/cerrar-sesionMP.png"))); // NOI18N
+        jButton1.setText(" ");
+        jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 710, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,47 +184,61 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 666, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAgregarContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarContactoActionPerformed
         // TODO add your handling code here:
         this.dispose();
         frmAgregarContacto frame = new frmAgregarContacto();
         frame.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAgregarContactoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnEliminarContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarContactoActionPerformed
         // TODO add your handling code here:
         this.dispose();
         frmEliminarContacto frame = new frmEliminarContacto();
         frame.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnEliminarContactoActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformacionActionPerformed
         // TODO add your handling code here:
         this.dispose();
         frmInformacionSistema frame = new frmInformacionSistema();
         frame.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnInformacionActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnBuscarContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarContactoActionPerformed
         // TODO add your handling code here:
         this.dispose();
         frmBuscarContacto frame = new frmBuscarContacto();
         frame.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnBuscarContactoActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnEditarContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarContactoActionPerformed
         // TODO add your handling code here:
         this.dispose();
         frmEditarContacto frame = new frmEditarContacto();
         frame.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnEditarContactoActionPerformed
+
+    private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        frmImprimirReporte frame = new frmImprimirReporte();
+        frame.setVisible(true);
+    }//GEN-LAST:event_btnReporteActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        frmContactManager frame = new frmContactManager();
+        frame.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,13 +276,15 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarContacto;
+    private javax.swing.JButton btnBuscarContacto;
+    private javax.swing.JButton btnEditarContacto;
+    private javax.swing.JButton btnEliminarContacto;
+    private javax.swing.JButton btnInformacion;
+    private javax.swing.JButton btnReporte;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
