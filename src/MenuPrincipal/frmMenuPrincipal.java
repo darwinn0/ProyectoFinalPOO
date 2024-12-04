@@ -52,7 +52,10 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jLabel1.setText("MENU PRINCIPAL");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 580, 130));
 
-        jButton1.setText("Agregar");
+        jButton1.setBackground(new java.awt.Color(0, 0, 51));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/Agregar Usu MP.png"))); // NOI18N
+        jButton1.setText(" ");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -60,7 +63,10 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 160, 180));
 
-        jButton2.setText("Eliminar");
+        jButton2.setBackground(new java.awt.Color(0, 0, 51));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/eliminar-amigoMPP.png"))); // NOI18N
+        jButton2.setText(" ");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 160, 180));
 
         jButton3.setText("Buscar");
