@@ -101,7 +101,6 @@ public class frmContactManager extends javax.swing.JFrame {
         btnEntrar.setText("Acceder");
         jPanel1.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 142, 40));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Principal .png"))); // NOI18N
         jLabel7.setText(" ");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 370, 100));
 

@@ -41,6 +41,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,13 +68,24 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/eliminar-amigoMPP.png"))); // NOI18N
         jButton2.setText(" ");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 160, 180));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 160, 180));
 
-        jButton3.setText("Buscar");
+        jButton3.setBackground(new java.awt.Color(0, 0, 51));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/busquedaMP.png"))); // NOI18N
+        jButton3.setText(" ");
+        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 160, 180));
 
-        jButton4.setText("Editar");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 160, 180));
+        jButton4.setBackground(new java.awt.Color(0, 0, 51));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/EditarMP.png"))); // NOI18N
+        jButton4.setText(" ");
+        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 160, 180));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 160, 180));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
@@ -84,7 +96,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Eliminar Contacto");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,23 +106,39 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Editar Contacto");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 590, 170, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 590, 170, -1));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Informacion del sistema ");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Imprimir Reporte  ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 590, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 590, -1, -1));
 
-        jButton5.setText("Informacion ");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 160, 160, 180));
+        jButton5.setBackground(new java.awt.Color(0, 0, 51));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/informacionMP.png"))); // NOI18N
+        jButton5.setText(" ");
+        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 160, 180));
 
-        jButton6.setText("Reporte ");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, 160, 180));
+        jButton6.setBackground(new java.awt.Color(0, 0, 51));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/ReporteMP.png"))); // NOI18N
+        jButton6.setText(" ");
+        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 400, 160, 180));
+
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText(" ");
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 860, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,6 +162,20 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         frmAgregarContacto frame = new frmAgregarContacto();
         frame.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        frmEliminarContacto frame = new frmEliminarContacto();
+        frame.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        frmInformacionSistema frame = new frmInformacionSistema();
+        frame.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,6 +227,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
