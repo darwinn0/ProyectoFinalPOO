@@ -42,9 +42,6 @@ public class frmAgregarContacto extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,29 +56,29 @@ public class frmAgregarContacto extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 120, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 120, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Teléfono");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 110, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 110, 30));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Correo ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 100, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 100, -1));
 
         txtNombre.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtNombre.setText(" ");
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 340, 30));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 340, 30));
 
         txtTelefono.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtTelefono.setText(" ");
-        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 340, 30));
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 340, 30));
 
         txtCorreo.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtCorreo.setText(" ");
-        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 340, 30));
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 340, 30));
 
         btnAgregar.setBackground(new java.awt.Color(0, 0, 51));
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/agregarMP.png"))); // NOI18N
@@ -117,27 +114,15 @@ public class frmAgregarContacto extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/TelefonoMP.png"))); // NOI18N
         jLabel8.setText(" ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/correoMP.png"))); // NOI18N
         jLabel9.setText(" ");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/usuarioMP.png"))); // NOI18N
         jLabel10.setText("  ");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("ID");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
-
-        txtID.setText(" ");
-        jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 340, 30));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/ID.png"))); // NOI18N
-        jLabel12.setText(" ");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -205,8 +190,6 @@ public class frmAgregarContacto extends javax.swing.JFrame {
     private javax.swing.JButton btnAtras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -217,7 +200,6 @@ public class frmAgregarContacto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables

@@ -121,21 +121,7 @@ public class frmContactManager extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
 
-        String user,pwd;
-        user = txtUsuario.getText();
-        pwd = txtPasword.getText();
         
-        if (user .equals("admin") && pwd.equals("123"))
-        {
-            JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
-        }
-        else 
-        {
-            frmMenuPrincipal acceso = new frmMenuPrincipal();
-            acceso.setVisible(true);
-            this.setVisible(false);
-            
-        }
        
           
     }//GEN-LAST:event_btnEntrarActionPerformed
@@ -143,7 +129,22 @@ public class frmContactManager extends javax.swing.JFrame {
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
         // TODO add your handling code here:
         
+        String user,pwd;
+        user = txtUsuario.getText();
+        pwd = txtPasword.getText();
         
+        if (user .equals("admin") && pwd.equals("123"))
+        {
+            frmMenuPrincipal acceso = new frmMenuPrincipal();
+            acceso.setVisible(true);
+            this.setVisible(false);
+        }
+        else 
+        {
+            JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
+            
+            
+        }
         
         
         
