@@ -128,12 +128,11 @@ public class frmContactManager extends javax.swing.JFrame {
 
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
         // TODO add your handling code here:
-        
         String user,pwd;
         user = txtUsuario.getText();
         pwd = txtPasword.getText();
         
-        if (user .equals("admin") && pwd.equals("123"))
+        if (user .equals("admin") || pwd.equals("123"))
         {
             frmMenuPrincipal acceso = new frmMenuPrincipal();
             acceso.setVisible(true);
@@ -142,9 +141,9 @@ public class frmContactManager extends javax.swing.JFrame {
         else 
         {
             JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
-            
-            
         }
+        
+        
         
         
         

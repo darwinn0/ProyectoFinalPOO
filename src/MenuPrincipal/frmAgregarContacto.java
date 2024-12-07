@@ -84,7 +84,7 @@ public class frmAgregarContacto extends javax.swing.JFrame {
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/agregarMP.png"))); // NOI18N
         btnAgregar.setText(" ");
         btnAgregar.setBorder(null);
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, -1, -1));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 530, -1, -1));
 
         btnAtras.setBackground(new java.awt.Color(0, 0, 51));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/atrasMP.png"))); // NOI18N
@@ -100,7 +100,7 @@ public class frmAgregarContacto extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Agregar");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 500, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 490, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
