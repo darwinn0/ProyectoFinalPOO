@@ -25,6 +25,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
     PreparedStatement ps = null;
     String query = "UPDATE mainmanager SET Name = ?, Phone = ?, Email = ?, Direction = ? WHERE ID = ?";
 
+    
     try {
         con = conn.getConexion();
         ps = con.prepareStatement(query);
@@ -63,12 +64,14 @@ public class frmEditarContacto extends javax.swing.JFrame {
         Statement st = null;   
         ResultSet rs= null;
         
+        modelo.setRowCount(0);
         
         try{
             con = conn.getConexion();
             st = con.createStatement();
-            rs= st.executeQuery("select * from mainmanager where Name like '%"+ txtBuscar.getText().trim() +"%'");
-            while(rs.next()){
+            rs= st.executeQuery("select * from mainmanager where Name like '%"+ txtBuscar.getText().trim().toLowerCase() +"%'");
+            while(rs.next())
+            {
                 dataMainManager[0] =rs.getString("Id");
                 dataMainManager[1] =rs.getString("Name");
                 dataMainManager[2] =rs.getString("Phone");
@@ -150,12 +153,12 @@ public class frmEditarContacto extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 770, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 730, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Atras");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 740, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 710, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,6 +167,11 @@ public class frmEditarContacto extends javax.swing.JFrame {
 
         txtBuscar.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtBuscar.setText(" ");
+        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBuscarKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 450, -1));
 
         dtMainManager.setModel(new javax.swing.table.DefaultTableModel(
@@ -207,7 +215,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Editar");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 730, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 710, -1, -1));
 
         btnEditar.setBackground(new java.awt.Color(0, 0, 51));
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/editar-informacion.png"))); // NOI18N
@@ -218,7 +226,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
                 btnEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 760, -1, -1));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 730, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/correoAC.png"))); // NOI18N
         jLabel9.setText(" ");
@@ -291,6 +299,11 @@ public class frmEditarContacto extends javax.swing.JFrame {
     UpdateContacto();
 // TODO add your handling code here:
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
+        toList();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarKeyPressed
 
     /**
      * @param args the command line arguments

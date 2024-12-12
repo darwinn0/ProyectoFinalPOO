@@ -23,10 +23,11 @@ public class frmBuscarContacto extends javax.swing.JFrame {
     Statement st = null;
     ResultSet rs = null;
 
-    try {
+    try 
+    {
         con = conn.getConexion();
         st = con.createStatement();
-        rs = st.executeQuery("SELECT * FROM mainmanager WHERE Name LIKE '%" + txtNombre.getText().trim() + "%'");
+        rs = st.executeQuery("SELECT * FROM mainmanager WHERE Name LIKE '%" + txtNombre.getText().trim().toLowerCase() + "%'");
         while (rs.next()) {
             Object[] dataMainManager = {
                 rs.getString("Id"),
@@ -119,6 +120,11 @@ public class frmBuscarContacto extends javax.swing.JFrame {
                 txtNombreActionPerformed(evt);
             }
         });
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombreKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 112, 500, 30));
 
         Nombre.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
@@ -164,6 +170,12 @@ public class frmBuscarContacto extends javax.swing.JFrame {
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
+        toList();
+                
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreKeyPressed
 
     /**
      * @param args the command line arguments

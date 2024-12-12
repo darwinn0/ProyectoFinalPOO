@@ -54,11 +54,12 @@ import javax.swing.table.DefaultTableModel;
         Statement st = null;   
         ResultSet rs= null;
         
+        modelo.setRowCount(0);
         
         try{
             con = conn.getConexion();
             st = con.createStatement();
-            rs= st.executeQuery("select * from mainmanager where Name like '%"+ txtDeleteId.getText().trim() +"%'");
+            rs= st.executeQuery("select * from mainmanager where Name like '%"+ txtDeleteId.getText().trim().toLowerCase() +"%'");
             while(rs.next()){
                 dataMainManager[0] =rs.getString("Id");
                 dataMainManager[1] =rs.getString("Name");
@@ -117,10 +118,15 @@ import javax.swing.table.DefaultTableModel;
         jLabel2.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText(" ID");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, -1, -1));
 
         txtDeleteId.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtDeleteId.setText("  ");
+        txtDeleteId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDeleteIdKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtDeleteId, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 400, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
@@ -160,7 +166,7 @@ import javax.swing.table.DefaultTableModel;
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/FondoEliminarC.jpg"))); // NOI18N
         jLabel7.setText(" ");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 730, 180));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 730, 180));
 
         dtMainManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -207,6 +213,11 @@ import javax.swing.table.DefaultTableModel;
          DeleteContacto();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void txtDeleteIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDeleteIdKeyPressed
+        toList();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDeleteIdKeyPressed
 
     /**
      * @param args the command line arguments
