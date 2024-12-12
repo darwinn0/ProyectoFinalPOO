@@ -29,7 +29,7 @@ public class frmAgregarContacto extends javax.swing.JFrame {
             ps.setString(4,txtIngresoDireccion.getText().trim());
             
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null,"!Datos Ingresados Correctamente!");
+            JOptionPane.showMessageDialog(null,"!Contacto Agregado Exitosamente!.");
             
         } catch (SQLException e){
             e.printStackTrace();
