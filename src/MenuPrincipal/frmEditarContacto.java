@@ -7,8 +7,11 @@ package MenuPrincipal;
 import DAO.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,46 +20,51 @@ import javax.swing.JOptionPane;
 public class frmEditarContacto extends javax.swing.JFrame {
 
     
-    public void UpdateContacto(){
-        Conexion conn = new Conexion ("proyectofinalpoo");
+    
+    // para mostrar
+    private void toList(){
+        Conexion conn = new Conexion("proyectofinalpoo");
+       
+        DefaultTableModel modelo;
+        Object dataMainManager[] = new Object[5];
+        modelo = (DefaultTableModel)dtMainManager.getModel(); 
+       
         Connection con = null;
-        PreparedStatement ps = null;
-        String query = "UPDATE INTO mainmanager (Name, Phone, Email, Direction) VALUES (?, ?, ?, ?)";
+        Statement st = null;   
+        ResultSet rs= null;
         
-        try {
+        
+        try{
             con = conn.getConexion();
-            ps = con.prepareStatement(query);
-            
-            ps.setString(1,txtEditarNombre.getText().trim());
-            ps.setString(2,txtEditarTelefono.getText().trim());
-            ps.setString(3,txtEditarCorreo.getText().trim());
-            ps.setString(4,txtEditarDireccion.getText().trim());
-            
-            ps.executeUpdate();
-             JOptionPane.showMessageDialog(null,"!Contacto Editado Correctamente!");
-            
-        } 
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-        } 
-        finally 
-        {
-            try 
-            {
-                if (ps != null) ps.close();
-                if (con != null) con.close(); 
-            } catch (SQLException e){
-                e.printStackTrace();
-            }
+            st = con.createStatement();
+            rs= st.executeQuery("select * from mainmanager where Name like '%"+ txtBuscar.getText().trim() +"%'");
+            while(rs.next()){
+                //System.out.println(rs.getString("Description"));
+                dataMainManager[0] =rs.getString("Id");
+                dataMainManager[1] =rs.getString("Name");
+                dataMainManager[2] =rs.getString("Phone");
+                dataMainManager[3] =rs.getString("Email");
+                dataMainManager[4] =rs.getString("Direction");
+                modelo.addRow(dataMainManager);
+            }            
+           dtMainManager.setModel(modelo);           
+           
+           con.close();
         }
+        catch(Exception e){
+            e.printStackTrace();                   
+             JOptionPane.showMessageDialog(null,"Error en las consultas");
+          }
     }
     /**
      * Creates new form frmEditarContacto
      */
     public frmEditarContacto() {
         initComponents();
+        
+        toList();
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,7 +82,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtBuscar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        dtMainManager = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -89,6 +97,8 @@ public class frmEditarContacto extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtEditarDireccion = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        txtEditarID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,43 +135,43 @@ public class frmEditarContacto extends javax.swing.JFrame {
         txtBuscar.setText(" ");
         jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 450, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        dtMainManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Telefono", "Correo"
+                "Id", "Nombre", "Telefono", "Correo", "Direccion"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(dtMainManager);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 630, 100));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Nombre");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
+        jLabel5.setText("ID");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Teléfono");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Correo");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 530, -1, -1));
 
         txtEditarNombre.setText(" ");
-        jPanel1.add(txtEditarNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 390, 30));
+        jPanel1.add(txtEditarNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 390, 30));
 
         txtEditarTelefono.setText(" ");
-        jPanel1.add(txtEditarTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 390, 30));
+        jPanel1.add(txtEditarTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 390, 30));
 
         txtEditarCorreo.setText(" ");
-        jPanel1.add(txtEditarCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 390, 30));
+        jPanel1.add(txtEditarCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 390, 30));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,27 +191,35 @@ public class frmEditarContacto extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/correoAC.png"))); // NOI18N
         jLabel9.setText(" ");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, -1, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/TelefonoAC.png"))); // NOI18N
         jLabel10.setText(" ");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, -1, 40));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, -1, 40));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/usuarioAC.png"))); // NOI18N
         jLabel12.setText(" ");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Dirección");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 600, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 620, -1, -1));
 
         txtEditarDireccion.setText(" ");
-        jPanel1.add(txtEditarDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 590, 390, 30));
+        jPanel1.add(txtEditarDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 610, 390, 30));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/Direccion.png"))); // NOI18N
         jLabel11.setText(" ");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 590, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 610, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Nombre");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, -1));
+
+        txtEditarID.setText(" ");
+        jPanel1.add(txtEditarID, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 390, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -230,7 +248,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-     UpdateContacto();
+
 // TODO add your handling code here:
     }//GEN-LAST:event_btnEditarActionPerformed
 
@@ -271,11 +289,13 @@ public class frmEditarContacto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditar;
+    private javax.swing.JTable dtMainManager;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -286,10 +306,10 @@ public class frmEditarContacto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtEditarCorreo;
     private javax.swing.JTextField txtEditarDireccion;
+    private javax.swing.JTextField txtEditarID;
     private javax.swing.JTextField txtEditarNombre;
     private javax.swing.JTextField txtEditarTelefono;
     // End of variables declaration//GEN-END:variables

@@ -70,7 +70,6 @@ public class frmContactManager extends javax.swing.JFrame {
         jPanel2.add(lblContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 148, 162, 44));
 
         txtUsuario.setFont(new java.awt.Font("Verdana", 2, 18)); // NOI18N
-        txtUsuario.setText(" ");
         jPanel2.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 291, 40));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));

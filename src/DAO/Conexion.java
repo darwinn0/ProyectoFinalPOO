@@ -34,6 +34,10 @@ public class Conexion {
             x.printStackTrace();
         } 
     }
+
+    public Conexion() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
      public Connection getConexion(){
         return c;

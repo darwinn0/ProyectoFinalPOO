@@ -10,46 +10,35 @@ import javax.swing.JOptionPane;
  *
  * @author darwi
  */
-public class frmEliminarContacto extends javax.swing.JFrame {
+    public class frmEliminarContacto extends javax.swing.JFrame {
 
-    
-        public void DeleteContacto(){
-        Conexion conn = new Conexion ("proyectofinalpoo");
+    public void DeleteContacto() {
+        Conexion conn = new Conexion("proyectofinalpoo");
         Connection con = null;
         PreparedStatement ps = null;
-        String query = "DELETE INTO mainmanager (Name, Phone, Email, Direction) VALUES (?, ?, ?, ?)";
-        
+        String query = "DELETE FROM mainmanager WHERE Id = ?";
+
         try {
             con = conn.getConexion();
             ps = con.prepareStatement(query);
-            
-            ps.setString(1,txtDeleteNombre.getText().trim());
-            ps.setString(2,txtDeleteTelefono.getText().trim());
-            ps.setString(3,txtDeleteCorreo.getText().trim());
 
-            
+            ps.setInt(1, Integer.parseInt(txtDeleteId.getText().trim()));
+
             ps.executeUpdate();
-             JOptionPane.showMessageDialog(null,"!Contacto Eliminado Correctamente Correctamente!.");
-            
-        } 
-        catch (SQLException e)
-        {
+            JOptionPane.showMessageDialog(null, "¡Contacto Eliminado Correctamente!");
+
+        } catch (SQLException e) {
             e.printStackTrace();
-        } 
-        finally 
-        {
-            try 
-            {
+        } finally {
+            try {
                 if (ps != null) ps.close();
-                if (con != null) con.close(); 
-            } catch (SQLException e){
+                if (con != null) con.close();
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-    /**
-     * Creates new form frmEliminarContacto
-     */
     }
+
     public frmEliminarContacto() {
         initComponents();
     }
@@ -66,19 +55,13 @@ public class frmEliminarContacto extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtDeleteNombre = new javax.swing.JTextField();
-        txtDeleteTelefono = new javax.swing.JTextField();
-        txtDeleteCorreo = new javax.swing.JTextField();
+        txtDeleteId = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,30 +75,12 @@ public class frmEliminarContacto extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
+        jLabel2.setText(" ID");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Teléfono");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Correo");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, -1, -1));
-
-        txtDeleteNombre.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
-        txtDeleteNombre.setText("  ");
-        jPanel1.add(txtDeleteNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 400, -1));
-
-        txtDeleteTelefono.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
-        txtDeleteTelefono.setText(" ");
-        jPanel1.add(txtDeleteTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 400, -1));
-
-        txtDeleteCorreo.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
-        txtDeleteCorreo.setText(" ");
-        jPanel1.add(txtDeleteCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 400, -1));
+        txtDeleteId.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
+        txtDeleteId.setText("  ");
+        jPanel1.add(txtDeleteId, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 400, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -139,33 +104,25 @@ public class frmEliminarContacto extends javax.swing.JFrame {
         jLabel6.setText("  Eliminar");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 460, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 51));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/EliminarEC.png"))); // NOI18N
-        jButton2.setText(" ");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setBackground(new java.awt.Color(0, 0, 51));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/EliminarEC.png"))); // NOI18N
+        btnEliminar.setText(" ");
+        btnEliminar.setBorder(null);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, -1, -1));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setText(" ");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 730, 280));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 730, 120));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/usuarioMP.png"))); // NOI18N
         jLabel10.setText("  ");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/TelefonoMP.png"))); // NOI18N
-        jLabel8.setText(" ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/correoMP.png"))); // NOI18N
-        jLabel9.setText(" ");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -192,10 +149,10 @@ public class frmEliminarContacto extends javax.swing.JFrame {
         frame.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
          DeleteContacto();
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,21 +190,15 @@ public class frmEliminarContacto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtDeleteCorreo;
-    private javax.swing.JTextField txtDeleteNombre;
-    private javax.swing.JTextField txtDeleteTelefono;
+    private javax.swing.JTextField txtDeleteId;
     // End of variables declaration//GEN-END:variables
 }

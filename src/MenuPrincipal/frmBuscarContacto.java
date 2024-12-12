@@ -105,7 +105,7 @@ public class frmBuscarContacto extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 700, -1, -1));
 
         txtNombre.setText(" ");
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 500, -1));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 122, 500, 20));
 
         Nombre.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         Nombre.setForeground(new java.awt.Color(255, 255, 255));
