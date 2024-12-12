@@ -6,13 +6,15 @@ package MenuPrincipal;
 import DAO.Conexion;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author darwi
  */
     public class frmEliminarContacto extends javax.swing.JFrame {
 
-    public void DeleteContacto() {
+    public void DeleteContacto() 
+    {
         Conexion conn = new Conexion("proyectofinalpoo");
         Connection con = null;
         PreparedStatement ps = null;
@@ -38,10 +40,47 @@ import javax.swing.JOptionPane;
             }
         }
     }
+    
+    
+     // para mostrar
+    private void toList(){
+        Conexion conn = new Conexion("proyectofinalpoo");
+       
+        DefaultTableModel modelo;
+        Object dataMainManager[] = new Object[5];
+        modelo = (DefaultTableModel)dtMainManager.getModel(); 
+       
+        Connection con = null;
+        Statement st = null;   
+        ResultSet rs= null;
+        
+        
+        try{
+            con = conn.getConexion();
+            st = con.createStatement();
+            rs= st.executeQuery("select * from mainmanager where Name like '%"+ txtDeleteId.getText().trim() +"%'");
+            while(rs.next()){
+                dataMainManager[0] =rs.getString("Id");
+                dataMainManager[1] =rs.getString("Name");
+                dataMainManager[2] =rs.getString("Phone");
+                dataMainManager[3] =rs.getString("Email");
+                dataMainManager[4] =rs.getString("Direction");
+                modelo.addRow(dataMainManager);
+            }            
+           dtMainManager.setModel(modelo);           
+           
+           con.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();                   
+             JOptionPane.showMessageDialog(null,"Error en las consultas");
+          }
+    }
 
     public frmEliminarContacto() 
     {
         initComponents();
+        toList();
     }
 
     /**
@@ -62,7 +101,8 @@ import javax.swing.JOptionPane;
         jLabel6 = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        dtMainManager = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,11 +117,11 @@ import javax.swing.JOptionPane;
         jLabel2.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText(" ID");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
 
         txtDeleteId.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtDeleteId.setText("  ");
-        jPanel1.add(txtDeleteId, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 400, -1));
+        jPanel1.add(txtDeleteId, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 400, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +143,7 @@ import javax.swing.JOptionPane;
         jLabel6.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("  Eliminar");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 460, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 460, -1, -1));
 
         btnEliminar.setBackground(new java.awt.Color(0, 0, 51));
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/EliminarEC.png"))); // NOI18N
@@ -114,30 +154,43 @@ import javax.swing.JOptionPane;
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, -1, -1));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 500, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/FondoEliminarC.jpg"))); // NOI18N
         jLabel7.setText(" ");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 730, 180));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 730, 180));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/ID.png"))); // NOI18N
-        jLabel10.setText("  ");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
+        dtMainManager.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nombre", "Telefono", "Correo", "Direccion"
+            }
+        ));
+        jScrollPane1.setViewportView(dtMainManager);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 730, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
+                .addGap(14, 14, 14))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 46, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -193,13 +246,14 @@ import javax.swing.JOptionPane;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JTable dtMainManager;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtDeleteId;
     // End of variables declaration//GEN-END:variables
 }
