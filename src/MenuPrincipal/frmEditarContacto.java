@@ -19,7 +19,37 @@ import javax.swing.table.DefaultTableModel;
  */
 public class frmEditarContacto extends javax.swing.JFrame {
 
-    
+    public void UpdateContacto() {
+    Conexion conn = new Conexion("proyectofinalpoo");
+    Connection con = null;
+    PreparedStatement ps = null;
+    String query = "UPDATE mainmanager SET Name = ?, Phone = ?, Email = ?, Direction = ? WHERE ID = ?";
+
+    try {
+        con = conn.getConexion();
+        ps = con.prepareStatement(query);
+
+        ps.setString(1, txtEditarNombre.getText().trim());
+        ps.setString(2, txtEditarTelefono.getText().trim());
+        ps.setString(3, txtEditarCorreo.getText().trim());
+        ps.setString(4, txtEditarDireccion.getText().trim());
+        ps.setString(5, txtEditarID.getText().trim());
+
+        ps.executeUpdate();
+        JOptionPane.showMessageDialog(null, "!Datos Actualizados Correctamente!");
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (ps != null) ps.close();
+            if (con != null) con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
     
     // para mostrar
     private void toList(){
@@ -248,7 +278,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-
+    UpdateContacto();
 // TODO add your handling code here:
     }//GEN-LAST:event_btnEditarActionPerformed
 
