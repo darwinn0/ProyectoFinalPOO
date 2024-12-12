@@ -12,45 +12,52 @@ import javax.swing.JOptionPane;
 public class frmBuscarContacto extends javax.swing.JFrame {
 
     
-    public frmBuscarContacto() {
-        initComponents();
-        
-        toList();
-    }
-    
-    private void toList(){
-        Conexion conn = new Conexion("proyectofinalpoo");
-       
-        DefaultTableModel modelo;
-        Object dataMainManager[] = new Object[5];
-        modelo = (DefaultTableModel)dtMainManager.getModel(); 
-       
-        Connection con = null;
-        Statement st = null;   
-        ResultSet rs= null;
-        
-        
-        try{
-            con = conn.getConexion();
-            st = con.createStatement();
-            rs= st.executeQuery("select * from mainmanager where Name like '%"+ txtNombre.getText().trim() +"%'");
-            while(rs.next()){
-                //System.out.println(rs.getString("Description"));
-                dataMainManager[0] =rs.getString("Id");
-                dataMainManager[1] =rs.getString("Name");
-                dataMainManager[2] =rs.getString("Phone");
-                dataMainManager[3] =rs.getString("Email");
-                dataMainManager[4] =rs.getString("Direction");
-                modelo.addRow(dataMainManager);
-            }            
-           dtMainManager.setModel(modelo);           
-           
-           con.close();
+   // para mostrar
+    private void toList() {
+    Conexion conn = new Conexion("proyectofinalpoo");
+
+    DefaultTableModel modelo = (DefaultTableModel) dtMainManager.getModel();
+    modelo.setRowCount(0); // Limpiar la tabla antes de agregar nuevos datos
+
+    Connection con = null;
+    Statement st = null;
+    ResultSet rs = null;
+
+    try {
+        con = conn.getConexion();
+        st = con.createStatement();
+        rs = st.executeQuery("SELECT * FROM mainmanager WHERE Name LIKE '%" + txtNombre.getText().trim() + "%'");
+        while (rs.next()) {
+            Object[] dataMainManager = {
+                rs.getString("Id"),
+                rs.getString("Name"),
+                rs.getString("Phone"),
+                rs.getString("Email"),
+                rs.getString("Direction")
+            };
+            modelo.addRow(dataMainManager);
         }
-        catch(Exception e){
-            e.printStackTrace();                   
-            JOptionPane.showMessageDialog(null,"Error en las consultas");
-          }
+        dtMainManager.setModel(modelo);
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Error en las consultas");
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (st != null) st.close();
+            if (con != null) con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+    public frmBuscarContacto() 
+    {
+        initComponents();
+        toList();
     }
     
     /**
