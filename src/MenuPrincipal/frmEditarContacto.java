@@ -162,8 +162,8 @@ public class frmEditarContacto extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Buscar Nombre");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
+        jLabel3.setText("Nombre:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
 
         txtBuscar.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtBuscar.setText(" ");
@@ -172,7 +172,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
                 txtBuscarKeyPressed(evt);
             }
         });
-        jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 450, -1));
+        jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 600, -1));
 
         dtMainManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,22 +186,22 @@ public class frmEditarContacto extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(dtMainManager);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 630, 80));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 700, 80));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("ID");
+        jLabel5.setText("Id:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Teléfono");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, -1, -1));
+        jLabel6.setText("Teléfono:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 100, -1));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Correo");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, -1));
+        jLabel7.setText("Correo:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 560, -1, -1));
 
         txtEditarNombre.setText(" ");
         jPanel1.add(txtEditarNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 390, 30));
@@ -226,7 +226,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
                 btnEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 730, -1, -1));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 740, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/correoAC.png"))); // NOI18N
         jLabel9.setText(" ");
@@ -242,9 +242,10 @@ public class frmEditarContacto extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Dirección");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 650, -1, -1));
+        jLabel4.setText("Dirección:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 643, -1, 30));
 
+        txtEditarDireccion.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtEditarDireccion.setText(" ");
         jPanel1.add(txtEditarDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 640, 390, 30));
 
@@ -254,7 +255,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Nombre");
+        jLabel13.setText("Nombre:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
 
         txtEditarID.setText(" ");
@@ -262,12 +263,12 @@ public class frmEditarContacto extends javax.swing.JFrame {
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/ID.png"))); // NOI18N
         jLabel14.setText("  ");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
 
         Cuadro.setBackground(new java.awt.Color(255, 255, 255));
         Cuadro.setText(" ");
         Cuadro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
-        jPanel1.add(Cuadro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 710, 420));
+        jPanel1.add(Cuadro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 710, 420));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -281,7 +282,7 @@ public class frmEditarContacto extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 851, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 883, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 

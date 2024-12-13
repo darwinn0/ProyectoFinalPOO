@@ -88,34 +88,34 @@ public class frmAgregarContacto extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 3, 54)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("AGREGAR CONTACTO ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre");
+        jLabel2.setText("Nombre:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 120, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Teléfono");
+        jLabel3.setText("Teléfono:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 110, 30));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Correo ");
+        jLabel4.setText("Correo: ");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 100, -1));
 
         txtIngresoNombre.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtIngresoNombre.setText(" ");
-        jPanel1.add(txtIngresoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 420, 30));
+        jPanel1.add(txtIngresoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 440, 30));
 
         txtIngresoTelefono.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtIngresoTelefono.setText(" ");
-        jPanel1.add(txtIngresoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 420, 30));
+        jPanel1.add(txtIngresoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 440, 30));
 
         txtIngresoCorreo.setFont(new java.awt.Font("Verdana", 2, 14)); // NOI18N
         txtIngresoCorreo.setText(" ");
-        jPanel1.add(txtIngresoCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 420, 30));
+        jPanel1.add(txtIngresoCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 440, 30));
 
         btnAgregar.setBackground(new java.awt.Color(0, 0, 51));
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/agregarMP.png"))); // NOI18N
@@ -126,7 +126,7 @@ public class frmAgregarContacto extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 660, -1, -1));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 590, -1, -1));
 
         btnAtras.setBackground(new java.awt.Color(0, 0, 51));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/atrasMP.png"))); // NOI18N
@@ -137,22 +137,21 @@ public class frmAgregarContacto extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, -1, -1));
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Agregar");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 620, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 550, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Atras");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 630, -1, -1));
+        jLabel6.setText("Atrás");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, -1, -1));
 
         Cuadro.setBackground(new java.awt.Color(255, 255, 255));
-        Cuadro.setText(" ");
         Cuadro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
-        jPanel1.add(Cuadro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 710, 390));
+        jPanel1.add(Cuadro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 710, 410));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/TelefonoMP.png"))); // NOI18N
         jLabel8.setText(" ");
@@ -168,11 +167,11 @@ public class frmAgregarContacto extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Dirección");
+        jLabel11.setText("Dirección:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, -1, -1));
 
         txtIngresoDireccion.setText(" ");
-        jPanel1.add(txtIngresoDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 420, 30));
+        jPanel1.add(txtIngresoDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, 440, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/Direccion.png"))); // NOI18N
         jLabel7.setText(" ");
@@ -183,15 +182,15 @@ public class frmAgregarContacto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
+                .addGap(0, 13, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 894, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
 
         pack();

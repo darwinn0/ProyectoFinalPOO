@@ -89,7 +89,7 @@ public class frmBuscarContacto extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 3, 54)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BUSCAR CONTACTO");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 620, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 620, -1));
 
         dtMainManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,34 +125,35 @@ public class frmBuscarContacto extends javax.swing.JFrame {
                 txtNombreKeyPressed(evt);
             }
         });
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 112, 500, 30));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 112, 520, 30));
 
         Nombre.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         Nombre.setForeground(new java.awt.Color(255, 255, 255));
         Nombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/usuarioMP.png"))); // NOI18N
-        jPanel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 40, -1));
+        jPanel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 30, 30));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Atras");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 680, -1, -1));
+        jLabel3.setText("Atrás");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 670, -1, -1));
 
         Nombre1.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         Nombre1.setForeground(new java.awt.Color(255, 255, 255));
-        Nombre1.setText("Nombre");
-        jPanel1.add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
+        Nombre1.setText("Nombre:");
+        jPanel1.add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 782, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
