@@ -112,7 +112,7 @@ public class frmInformacionSistema extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Jorge Martinéz");
+        jLabel12.setText("Jorge Martínez");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
@@ -122,8 +122,8 @@ public class frmInformacionSistema extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Sabado 14 de diciembre del 2024 ");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, -1, -1));
+        jLabel14.setText("Sábado 14 de diciembre del 2024 ");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 498, -1, 20));
 
         jLabel15.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -140,7 +140,7 @@ public class frmInformacionSistema extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

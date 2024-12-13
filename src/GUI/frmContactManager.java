@@ -41,7 +41,6 @@ public class frmContactManager extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         btnEntrar = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -55,7 +54,7 @@ public class frmContactManager extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 54)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ACCESO AL SISTEMA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 680, 80));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 680, 80));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
@@ -90,7 +89,7 @@ public class frmContactManager extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Acceder");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 480, 120, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 480, 120, -1));
 
         btnSalir.setBackground(new java.awt.Color(0, 0, 51));
         btnSalir.setForeground(new java.awt.Color(0, 0, 51));
@@ -101,7 +100,7 @@ public class frmContactManager extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 100, 80));
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 100, 80));
 
         btnEntrar.setBackground(new java.awt.Color(0, 0, 51));
         btnEntrar.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
@@ -117,22 +116,19 @@ public class frmContactManager extends javax.swing.JFrame {
                 btnEntrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 520, 110, 80));
-
-        jLabel7.setText(" ");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 370, 100));
+        jPanel1.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 520, 110, 80));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 54)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("EASY CONTACT");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 510, 80));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 510, 80));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Salir");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 70, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 70, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 640));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -152,7 +148,7 @@ public class frmContactManager extends javax.swing.JFrame {
         
         if (user .equals("admin") && pwd.equals("123"))
         {
-            JOptionPane.showMessageDialog(null,"!Bienvenido a Nuestro Simulador De Contactos!.");
+            JOptionPane.showMessageDialog(null,"!Bienvenido a Nuestro Gestor De Contactos!.");
             frmMenuPrincipal acceso = new frmMenuPrincipal();
             acceso.setVisible(true);
             this.setVisible(false);
@@ -170,9 +166,11 @@ public class frmContactManager extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntrarMouseClicked
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       {
+         JOptionPane.showMessageDialog(null,"Gracias por usar nuestro sistema.");
+        }
         dispose();
         
-       
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
@@ -218,7 +216,6 @@ public class frmContactManager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
