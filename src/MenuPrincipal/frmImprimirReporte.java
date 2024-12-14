@@ -6,7 +6,6 @@ package MenuPrincipal;
 
 
 
-
 /**
  *
  * @author darwi
@@ -62,14 +61,18 @@ public class frmImprimirReporte extends javax.swing.JFrame {
         });
         jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, -1, -1));
 
+        btnGenerarReporte.setBackground(new java.awt.Color(0, 0, 51));
         btnGenerarReporte.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGenerarReporte.setForeground(new java.awt.Color(255, 255, 255));
+        btnGenerarReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/reporte-de-negocios.png"))); // NOI18N
         btnGenerarReporte.setText("IMPRIMIR REPORTE");
+        btnGenerarReporte.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnGenerarReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarReporteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+        jPanel1.add(btnGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 420, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

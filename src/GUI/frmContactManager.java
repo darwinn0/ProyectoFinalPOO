@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import DAO.UsuarioDAO;
 import MenuPrincipal.frmMenuPrincipal;
 import javax.swing.JOptionPane;
 
@@ -142,22 +143,24 @@ public class frmContactManager extends javax.swing.JFrame {
 
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
         // TODO add your handling code here:
-        String user,pwd;
-        user = txtUsuario.getText();
-        pwd = txtPasword.getText();
         
-        if (user .equals("admin") && pwd.equals("123"))
-        {
-            JOptionPane.showMessageDialog(null,"!Bienvenido a Nuestro Gestor De Contactos!.");
+        String user = txtUsuario.getText().trim();
+        String pwd = new String(txtPasword.getPassword()).trim();
+
+        if (user.isEmpty() || pwd.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingresa ambos campos.", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        if (usuarioDAO.verificarUsuario(user, pwd)) {
+            JOptionPane.showMessageDialog(this, "!Bienvenido a Nuestro Gestor De Contactos!");
             frmMenuPrincipal acceso = new frmMenuPrincipal();
             acceso.setVisible(true);
             this.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error de Inicio de Sesión", JOptionPane.ERROR_MESSAGE);
         }
-        else 
-        {
-            JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
-        }
-        
         
         
         
