@@ -29,8 +29,11 @@ import javax.swing.table.DefaultTableModel;
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "¡Contacto Eliminado Correctamente!");
 
-        } catch (SQLException e) {
+        } catch (SQLException e) 
+        {
             e.printStackTrace();
+       
+            
         } finally {
             try {
                 if (ps != null) ps.close();
