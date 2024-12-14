@@ -4,12 +4,16 @@
  */
 package MenuPrincipal;
 
+
+
+
 /**
  *
  * @author darwi
  */
 public class frmImprimirReporte extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form frmImprimirReporte
      */
@@ -29,7 +33,8 @@ public class frmImprimirReporte extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
+        btnGenerarReporte = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,16 +51,25 @@ public class frmImprimirReporte extends javax.swing.JFrame {
         jLabel2.setText("Atrás");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 483, -1, 20));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/atrasAC.png"))); // NOI18N
-        jButton1.setText(" ");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAtras.setBackground(new java.awt.Color(0, 0, 51));
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuPrincipal/atrasAC.png"))); // NOI18N
+        btnAtras.setText(" ");
+        btnAtras.setBorder(null);
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, -1, -1));
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, -1, -1));
+
+        btnGenerarReporte.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGenerarReporte.setText("IMPRIMIR REPORTE");
+        btnGenerarReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReporteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,12 +87,20 @@ public class frmImprimirReporte extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         // TODO add your handling code here:
         this.dispose();
         frmMenuPrincipal frame = new frmMenuPrincipal();
         frame.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
+
+    
+    
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReporteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,7 +138,8 @@ public class frmImprimirReporte extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
